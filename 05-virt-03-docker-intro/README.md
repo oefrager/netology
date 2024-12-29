@@ -30,7 +30,8 @@
 В данном случае мы использовали docker с командой compose, а не docker-compose.
 
 "compose.yaml":
-'''
+
+```
 include:
   - docker-compose.yaml
 
@@ -41,5 +42,5 @@ services:
     image: portainer/portainer-ce:latest
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-'''
+```
 
