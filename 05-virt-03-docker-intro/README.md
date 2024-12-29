@@ -27,3 +27,19 @@
 
 
 ## Задача 5
+В данном случае мы использовали docker с командой compose, а не docker-compose.
+
+"compose.yaml":
+'''
+include:
+  - docker-compose.yaml
+
+version: "3"
+services:
+  portainer:
+    network_mode: host
+    image: portainer/portainer-ce:latest
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+'''
+
