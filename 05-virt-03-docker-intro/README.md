@@ -27,7 +27,7 @@
 
 
 ## Задача 5
-В данном случае мы использовали docker с командой compose, а не docker-compose.
+Docker запустил compose.yamlб т.к. в данном случае мы использовали docker с командой compose, а не docker-compose.
 
 "compose.yaml":
 
@@ -43,4 +43,8 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 ```
+Работа с portainer:
 
+![Снимок экрана от 2024-12-30 10-15-23](https://github.com/user-attachments/assets/ae5fa4a0-7d18-475d-bc3d-7548450b93e0)
+![Снимок экрана от 2024-12-30 10-13-50](https://github.com/user-attachments/assets/77c72f80-38b3-4bee-b53d-5b75807bc4f5)
+![Снимок экрана от 2024-12-30 10-21-19](https://github.com/user-attachments/assets/cfaef1d0-c1e1-4478-9f92-44789276036d)
