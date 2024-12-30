@@ -43,8 +43,12 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 ```
+Запускаем portainer:
+
+![Снимок экрана от 2024-12-30 10-26-26](https://github.com/user-attachments/assets/57a0c7f3-3d93-453e-80fe-a9388ee1fdeb)
+
 Работа с portainer:
 
 ![Снимок экрана от 2024-12-30 10-15-23](https://github.com/user-attachments/assets/ae5fa4a0-7d18-475d-bc3d-7548450b93e0)
 ![Снимок экрана от 2024-12-30 10-13-50](https://github.com/user-attachments/assets/77c72f80-38b3-4bee-b53d-5b75807bc4f5)
-![Снимок экрана от 2024-12-30 10-21-19](https://github.com/user-attachments/assets/cfaef1d0-c1e1-4478-9f92-44789276036d)
+![Снимок экрана от 2024-12-30 10-24-23](https://github.com/user-attachments/assets/a5550292-9a50-4e5f-a81d-06b1a1f371fc)
