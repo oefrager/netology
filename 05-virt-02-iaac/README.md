@@ -14,6 +14,8 @@
 
  Добавляем в скрипт установку docker, htop и tmux.
  
+ [mydebian.json.pkr.hcl](https://github.com/netology-code/virtd-homeworks/blob/shvirtd-1/05-virt-02-iaac/src/mydebian.json.pkr.hcl)
+ 
  (не забудьте про ключ автоматического подтверждения установки для apt)
     Найдите свой образ в web консоли yandex_cloud
     Необязательное задание(*): найдите в документации yandex cloud как найти свой образ с помощью утилиты командной строки "yc cli".
