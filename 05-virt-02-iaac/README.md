@@ -1,20 +1,25 @@
 ## Задача 1
 
 Установливаем VirtualBox, Vagrant, Packer, настраиваем уandex cloud cli
-
 ![изображение](https://github.com/user-attachments/assets/57bdf2a2-60d9-46ba-bd12-74841e237d5c)
+
 
 ## Задача 2
 
 Создаем виртуальную машину Virtualbox с помощью Vagrant и Vagrantfile и проверяем наличие Docker:
- 
 ![изображение](https://github.com/user-attachments/assets/f8def894-e616-452b-b813-e1672dfa5627)
+
 
 ## Задача 3
 
- Добавляем в скрипт установку docker, htop и tmux.
+Добавляем в скрипт установку docker, htop и tmux.
  
- [mydebian.json.pkr.hcl](https://github.com/netology-code/virtd-homeworks/blob/shvirtd-1/05-virt-02-iaac/src/mydebian.json.pkr.hcl)
+[mydebian.json.pkr.hcl](https://github.com/netology-code/virtd-homeworks/blob/shvirtd-1/05-virt-02-iaac/src/mydebian.json.pkr.hcl)
+
+Проверяем наличие:
+![изображение](https://github.com/user-attachments/assets/a349bffb-eb0e-4ce4-8360-449dd3c66d7d)
+![изображение](https://github.com/user-attachments/assets/183658bb-e0a2-485d-b744-deab62909003)
+
  
  (не забудьте про ключ автоматического подтверждения установки для apt)
     Найдите свой образ в web консоли yandex_cloud
