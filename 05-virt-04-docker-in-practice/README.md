@@ -31,9 +31,10 @@ QQQ
  
 ![изображение](https://github.com/user-attachments/assets/40c0c970-a71f-4429-8cd4-c9b5125ea11f)
 
-По полученному имени нахим в архиве:
+По полученному имени нахим в архиве и распаковываем:
 
-![изображение](https://github.com/user-attachments/assets/bdba5c41-93ae-4637-8fb7-ed1f73c1523c)
+![изображение](https://github.com/user-attachments/assets/4c05d63f-c3ef-467c-92a7-5c5a81d5e989)
+
 
 
 ## Задача 6.1
