@@ -8,9 +8,20 @@
 QQQ
 
 
-## Задача 2
+## Задача 2 (*)
 QQQ
 
+
+## Задача 3
+QQQ
+
+
+## Задача 4
+QQQ
+
+
+## Задача 5 (*)
+QQQ
 
 
 ## Задача 6
@@ -29,3 +40,11 @@ QQQ
 Получаем файл ```/bin/terraform``` из образа hashicorp/terraform:latest с поиощью ```docker cp```:
 
 ![изображение](https://github.com/user-attachments/assets/dd0d2d68-2ac9-4e1b-ba9c-0276cf6ed9e1)
+
+
+## Задача 6.2 (**)
+QQQ
+
+
+## Задача 7 (***)
+QQQ
