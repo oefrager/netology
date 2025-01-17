@@ -17,8 +17,16 @@
 
 
 ## Задача 2 (*)
-QQQ
+Создаем в yandex cloud container registry с именем "test" и заливаем образ:
 
+![изображение](https://github.com/user-attachments/assets/2d42cbf7-c676-49ba-8f74-4c9c7aa342da)
+
+Сканируем на уязвимости:
+
+![изображение](https://github.com/user-attachments/assets/66d8c446-dca3-4abb-9dca-e15dcff03a51)
+
+подробнее:
+![изображение](https://github.com/user-attachments/assets/4ab1f6bb-d2a4-4389-80b1-d8cae89eccf5)
 
 ## Задача 3
 QQQ
