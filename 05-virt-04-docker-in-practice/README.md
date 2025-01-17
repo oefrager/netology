@@ -8,9 +8,11 @@
 Создаем в своем github  fork https://github.com/netology-code/shvirtd-example-python/blob/main/README.md
 
 
-Создаем файл с Dockerfile.python 
+Создаем файл [Dockerfile.python](Dockerfile.python)
+
 Создаем контейнер командой:
 ```sudo docker build -f Dockerfile.python -t oefrager_docker .```
+
 ![изображение](https://github.com/user-attachments/assets/1abf9418-9a24-47e6-8482-430a571f6df2)
 
 
