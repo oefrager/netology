@@ -29,7 +29,7 @@
 ![изображение](https://github.com/user-attachments/assets/4ab1f6bb-d2a4-4389-80b1-d8cae89eccf5)
 
 ## Задача 3
-QQQ
+Создаем файл [compose.yaml]{compose.yaml}
 
 
 ## Задача 4
