@@ -1,0 +1,13 @@
+FROM python:3.9-slim
+
+
+ENV DB_HOST=127.0.0.1
+ENV DB_USER=root
+ENV DB_PASSWORD=p@ssw0rd
+ENV DB_NAME=test_db
+
+WORKDIR /app
+COPY requirements.txt ./
+RUN pip install -r requirements.txt
+COPY main.py ./
+CMD ["python", "main.py"]
