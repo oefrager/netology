@@ -1,34 +1,53 @@
-version: '3.8'
+ersion: '3.8'
+
 include:
-  - "proxy.yaml"
+  - proxy.yaml
+
 services:
 
   web:
-    image: oefrager_docker
-    restart: always
-    networks:
-        backend: {}
-    ports:
-    - "172.20.0.5"
+    build:
+      context: ./                   # путь до докерфайла
+      dockerfile: Dockerfile.python # имя докерфайла
+    container_name: web             # имя контейнера
+    ports:                          # проброс портов
+      - '5000:5000'                 # номер порта
+    restart: on-failure             # перезапуск контейнера
     env_file:
-    - .env
-    #volumes:
+      - .env                  # файл с переменными
+    environment:                    # блок переменных
+  #    - TZ=Europe/Moscow            # установка часового пояса МСК
+      - DB_HOST=db
+      - DB_USER=app
+      - DB_PASSWORD:${MYSQL_PASSWORD}
+      - DB_NAME=example
+    networks:
+      backend:                      # добавить в сеть backend
+       ipv4_address: 172.20.0.5     # статический IPv4
 
   db:
-    image: mysql:8
-    restart: always
-    networks:
-        backend: {}
+    image: mysql:8.0   # версия снимка
+    container_name: db # имя контейнера
     ports:
-    - "172.20.0.10"
+      - '3306:3306'
+    restart: on-failure
     env_file:
-    - .env
-    #volumes:
-    
+      - .env
+    volumes:           # том и проброс файла в директории
+      - ./mysql/my.conf:/etc/mysql/my.cnf:ro
+      - mysql_data:/var/lib/mysql
+    environment:
+      # Все параметры описываем в файле .env в папке проекта
+      #- TZ=Europe/Moscow
+      - MYSQL_ROOT_HOST="%"
+      - MYSQL_ROOT_PASSWORD:${MYSQL_ROOT_PASSWORD}
+      - MYSQL_USER:${MYSQL_USER}
+      - MYSQL_PASSWORD:${MYSQL_PASSWORD}
+      - MYSQL_ROOT_PASSWORD:${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE:${MYSQL_DATABASE}
+    networks:
+      backend:
+        ipv4_address: 172.20.0.10
 
-networks:
-  backend:
-    driver: bridge
-    ipam:
-     config:
-       - subnet: 172.20.0.0/24
+volumes:
+  mysql_data: {}
