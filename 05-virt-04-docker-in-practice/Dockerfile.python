@@ -1,11 +1,5 @@
 FROM python:3.9-slim
 
-ENV DB_HOST=172.20.0.10
-ENV DB_USER=db_user
-ENV DB_PASSWORD=db_password
-ENV DB_NAME=db_database
-ENV DB_TABLE=db_table
-
 WORKDIR /app
 COPY requirements.txt ./
 RUN pip install -r requirements.txt
