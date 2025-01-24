@@ -43,7 +43,7 @@
 ## Задача 4
 Создаем Yandex Cloud ВМ, содаем [файл](clone.sh) автоматизации
 
-Делаем fork и проверяем запросы:
+Делаем [fork](https://github.com/oefrager/shvirtd-example-python.git) и проверяем запросы:
 
 ![изображение](https://github.com/user-attachments/assets/8439fe7a-74ae-46a8-84fe-eee4c5e6b1d4)
 
