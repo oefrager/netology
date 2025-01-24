@@ -41,7 +41,8 @@
 ![изображение](https://github.com/user-attachments/assets/ecdf7fca-9779-4f95-919c-9465d610f651)
 
 ## Задача 4
-QQQ
+Создаем Yandex Cloud ВМ, делаем fork в каталог /opt:
+
 
 
 
