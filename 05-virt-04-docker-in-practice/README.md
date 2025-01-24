@@ -41,16 +41,13 @@
 ![изображение](https://github.com/user-attachments/assets/ecdf7fca-9779-4f95-919c-9465d610f651)
 
 ## Задача 4
-Создаем Yandex Cloud ВМ, содаем скрипт автоматизации:
-
+Создаем Yandex Cloud ВМ, содаем [файл](clone.sh) автоматизации
 
 Делаем fork и проверяем запросы:
 
 ![изображение](https://github.com/user-attachments/assets/8439fe7a-74ae-46a8-84fe-eee4c5e6b1d4)
 
-
-![изображение](https://github.com/user-attachments/assets/ffaece6e-4872-477f-8bcb-4a552c991d21)
-
+![изображение](https://github.com/user-attachments/assets/589d9aa7-347b-413e-8a09-ee96c08a0ddc)
 
 
 ## Задача 5 (*)
