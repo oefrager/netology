@@ -12,34 +12,27 @@ services:
     ports:                          # проброс портов
       - '5000:5000'
     restart: on-failure
-    env_file:
-      - .env                        # файл с переменными
-    environment:                    # блок переменных
-      - DB_HOST=db
-      - DB_USER=app
-      - DB_PASSWORD:${MYSQL_PASSWORD}
-      - DB_NAME=virtd
+    env_file: .env                        # файл с переменными
     networks:
       backend:                      # добавить в сеть backend
        ipv4_address: 172.20.0.5
+  
   db:
     image: mysql:8.0
     container_name: db
     ports:
       - '3306:3306'
     restart: on-failure
-    env_file:
-      - .env
+    env_file: .env
     volumes:           # том и проброс файла в директории
       - ./mysql/my.conf:/etc/mysql/my.cnf:ro
       - mysql_data:/var/lib/mysql
     environment:
       - MYSQL_ROOT_HOST="%"
-      - MYSQL_ROOT_PASSWORD:${MYSQL_ROOT_PASSWORD}
-      - MYSQL_USER:${MYSQL_USER}
-      - MYSQL_PASSWORD:${MYSQL_PASSWORD}
-      - MYSQL_ROOT_PASSWORD:${MYSQL_ROOT_PASSWORD}
-      - MYSQL_DATABASE:${MYSQL_DATABASE}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
     networks:
       backend:
         ipv4_address: 172.20.0.10
