@@ -6,7 +6,6 @@
 Согласно файлу .gitignore допускается хранить секретные данные в файле personal.auto.tfvarsфайле.
 
 Инициализируем каталог командой ```terrafrom init```, выполняем код и получаем файл ```terraform.tfstate```. Находим в нем секретные данные:
-
 ![изображение](https://github.com/user-attachments/assets/25120e8a-a3c3-4a40-86ce-594556781ec7)
 
 Раскомментируем блок кода в файла main.tf. Проверяем командой ```terraform validate``` и видим ошибки:
@@ -27,7 +26,6 @@ resource "docker_container" "nginx" {
   name  = "example_${random_password.random_string.result}"
 ```
 и получаем:
-
 ![изображение](https://github.com/user-attachments/assets/916ce30b-1554-42a2-a310-5a252dfa3859)
 
 Меняем имя контейнера на ```hello_world``` 
@@ -39,8 +37,8 @@ resource "docker_container" "nginx" {
 
 с помощью ```terraform apply -auto-approve```  получаем:
 ![изображение](https://github.com/user-attachments/assets/abc80e2a-bb26-4056-b791-a5e11b4bd567)
-
 Ключ ```-auto-approve``` отключает режим подтверждения изменений. Что грозит удалением инфраструктуры или применением изменений на лету. Допустим на тестовых сценариях.
+
 
 docker-образ nginx:latest не был удалён из-за строчки кода```keep_locally = true```
 
