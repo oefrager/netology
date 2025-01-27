@@ -12,11 +12,11 @@
 Раскомментируем блок кода в файла main.tf. Проверяем командой ```terraform validate``` и видим ошибки:
   1. Название блока должно содержать 2 значения
   2. Имя ```1nginx``` должно начмнать с буквы
-  3. Лишние сиволы в строке и заглавная буква.
+  3. Лишние символы в строке и заглавная буква.
 
 ![Снимок экрана от 2025-01-27 16-26-12](https://github.com/user-attachments/assets/619e865c-f214-44d3-815c-40cfb10f89dd)
 
-Исправляем код 
+Исправляем код:
 ```   
 resource "docker_image" "nginx" {
   name         = "nginx:latest"
@@ -41,6 +41,10 @@ resource "docker_container" "nginx" {
 ![изображение](https://github.com/user-attachments/assets/abc80e2a-bb26-4056-b791-a5e11b4bd567)
 
 Ключ ```-auto-approve``` отключает режим подтверждения изменений. Что грозит удалением инфраструктуры или применением изменений на лету. Допустим на тестовых сценариях.
+
+docker-образ nginx:latest не был удалён из-за строчки кода```keep_locally = true```
+
+![image](https://github.com/user-attachments/assets/8b5ccd94-d30d-4765-989a-631a59ca09b1)
 
 
 ## Задание 2*
