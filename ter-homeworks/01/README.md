@@ -36,7 +36,9 @@ resource "docker_container" "nginx" {
 ```
 
 с помощью ```terraform apply -auto-approve```  получаем:
+
 ![изображение](https://github.com/user-attachments/assets/abc80e2a-bb26-4056-b791-a5e11b4bd567)
+
 Ключ ```-auto-approve``` отключает режим подтверждения изменений. Что грозит удалением инфраструктуры или применением изменений на лету. Допустим на тестовых сценариях.
 
 
