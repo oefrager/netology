@@ -16,7 +16,17 @@
 
 ![Снимок экрана от 2025-01-27 16-26-12](https://github.com/user-attachments/assets/619e865c-f214-44d3-815c-40cfb10f89dd)
 
-Исправляем код и получаем:
+Исправляем код 
+```   
+resource "docker_image" "nginx" {
+  name         = "nginx:latest"
+  keep_locally = true
+}
+resource "docker_container" "nginx" {
+  image = docker_image.nginx.image_id
+  name  = "example_${random_password.random_string.result}"
+```
+и получаем:
 
 ![изображение](https://github.com/user-attachments/assets/916ce30b-1554-42a2-a310-5a252dfa3859)
 
