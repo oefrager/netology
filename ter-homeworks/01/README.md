@@ -30,6 +30,18 @@ resource "docker_container" "nginx" {
 
 ![изображение](https://github.com/user-attachments/assets/916ce30b-1554-42a2-a310-5a252dfa3859)
 
+Меняем имя контейнера на ```hello_world``` 
+```   
+resource "docker_container" "nginx" {
+  image = docker_image.nginx.image_id
+  name  = "hello_world"
+```
+
+с помощью ```terraform apply -auto-approve```  получаем:
+![изображение](https://github.com/user-attachments/assets/abc80e2a-bb26-4056-b791-a5e11b4bd567)
+
+Ключ ```-auto-approve``` отключает режим подтверждения изменений. Что грозит удалением инфраструктуры или применением изменений на лету. Допустим на тестовых сценариях.
+
 
 ## Задание 2*
 
