@@ -11,11 +11,11 @@
 
 4. Раскомментируем блок кода в файла main.tf. Проверяем командой ```terraform validate``` и видим ошибки:
    
-  a. Название блока должно содержать 2 значения.
+      a. Название блока должно содержать 2 значения.
+   
+      b. Имя ```1nginx``` должно начмнать с буквы.
   
-  b. Имя ```1nginx``` должно начмнать с буквы.
-  
-  c. Лишние символы в строке и заглавная буква.
+      c. Лишние символы в строке и заглавная буква.
 
 ![Снимок экрана от 2025-01-27 16-26-12](https://github.com/user-attachments/assets/619e865c-f214-44d3-815c-40cfb10f89dd)
 
@@ -59,18 +59,16 @@ resource "docker_container" "nginx" {
   
    ![Снимок экрана от 2025-01-28 10-58-21](https://github.com/user-attachments/assets/64a3688f-ef2d-4bcc-ab1f-2b31ef59eb9f)
 
-   
-    Используя terraform и remote docker context, скачайте и запустите на вашей ВМ контейнер mysql:8 на порту 127.0.0.1:3306, передайте ENV-переменные. Сгенерируйте разные пароли через random_password и передайте их в контейнер, используя интерполяцию из примера с nginx.(name  = "example_${random_password.random_string.result}" , двойные кавычки и фигурные скобки обязательны!)
-
-    environment:
-      - "MYSQL_ROOT_PASSWORD=${...}"
-      - MYSQL_DATABASE=wordpress
-      - MYSQL_USER=wordpress
-      - "MYSQL_PASSWORD=${...}"
-      - MYSQL_ROOT_HOST="%"
-
-    Зайдите на вашу ВМ , подключитесь к контейнеру и проверьте наличие секретных env-переменных с помощью команды env. Запишите ваш финальный код в репозиторий.
+  Не получилось прикрутить переменные :(
 
 ## Задание 3*
-1. Установливаем opentofu (v1.9.0).
+1. Установливаем opentofu (v1.9.0). Создаем ```.tofurc``` и добавляем в коде: ```source = "registry.terraform.io/XXX```
+
 2. Запускаем код с помощью ```tofu apply```.
+
+   ![изображение](https://github.com/user-attachments/assets/c9530441-8349-49ee-95fe-1e0a971f68c1)
+
+Проверяем наличие контейнера:
+![изображение](https://github.com/user-attachments/assets/2c16d6b9-f712-4a6d-ac81-8ee0bd84412f)
+
+
