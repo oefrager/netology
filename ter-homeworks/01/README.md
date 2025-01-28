@@ -30,6 +30,7 @@ resource "docker_container" "nginx" {
   name  = "example_${random_password.random_string.result}"
 ```
 и получаем:
+
 ![изображение](https://github.com/user-attachments/assets/916ce30b-1554-42a2-a310-5a252dfa3859)
 
 6. Меняем имя контейнера на ```hello_world``` 
@@ -59,7 +60,7 @@ resource "docker_container" "nginx" {
   
    ![Снимок экрана от 2025-01-28 10-58-21](https://github.com/user-attachments/assets/64a3688f-ef2d-4bcc-ab1f-2b31ef59eb9f)
 
-  Не получилось прикрутить переменные :(
+  Не получилось прикрутить переменные для MYSQL :(
 
 ## Задание 3*
 1. Установливаем opentofu (v1.9.0). Создаем ```.tofurc``` и добавляем в коде: ```source = "registry.terraform.io/XXX```
@@ -69,6 +70,7 @@ resource "docker_container" "nginx" {
    ![изображение](https://github.com/user-attachments/assets/c9530441-8349-49ee-95fe-1e0a971f68c1)
 
 Проверяем наличие контейнера:
+
 ![изображение](https://github.com/user-attachments/assets/2c16d6b9-f712-4a6d-ac81-8ee0bd84412f)
 
 
