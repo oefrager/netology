@@ -10,6 +10,7 @@
 ![изображение](https://github.com/user-attachments/assets/25120e8a-a3c3-4a40-86ce-594556781ec7)
 
 4. Раскомментируем блок кода в файла main.tf. Проверяем командой ```terraform validate``` и видим ошибки:
+   
   a. Название блока должно содержать 2 значения
   b. Имя ```1nginx``` должно начмнать с буквы
   c. Лишние символы в строке и заглавная буква.
@@ -52,8 +53,11 @@ resource "docker_container" "nginx" {
 
 ## Задание 2*
 1. Создаем в облаке ВМ.
-2. Подключаемсяь к ВМ по ssh и установите стек docker.
-    Найдите в документации docker provider способ настроить подключение terraform на вашей рабочей станции к remote docker context вашей ВМ через ssh.
+2. Подключаемся к ВМ, настраиваем remote docker context:
+  
+   ![Снимок экрана от 2025-01-28 10-58-21](https://github.com/user-attachments/assets/64a3688f-ef2d-4bcc-ab1f-2b31ef59eb9f)
+
+   
     Используя terraform и remote docker context, скачайте и запустите на вашей ВМ контейнер mysql:8 на порту 127.0.0.1:3306, передайте ENV-переменные. Сгенерируйте разные пароли через random_password и передайте их в контейнер, используя интерполяцию из примера с nginx.(name  = "example_${random_password.random_string.result}" , двойные кавычки и фигурные скобки обязательны!)
 
     environment:
