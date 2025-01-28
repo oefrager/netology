@@ -41,9 +41,11 @@ resource "docker_container" "nginx" {
 
 Ключ ```-auto-approve``` отключает режим подтверждения изменений. Что грозит удалением инфраструктуры или применением изменений на лету. Допустим на тестовых сценариях.
 
-7. Уничтожьте созданные ресурсы с помощью terraform. Убедитесь, что все ресурсы удалены. Приложите содержимое файла terraform.tfstate.
+7. Уничтожьте созданные ресурсы с помощью ```terraform destroy```. Содержимое файла terraform.tfstate:
 
-8. docker-образ nginx:latest не был удалён из-за строчки кода```keep_locally = true```
+   ![изображение](https://github.com/user-attachments/assets/1179dfa4-5653-4573-8dad-fa873dbd6da7)
+
+9. docker-образ nginx:latest не был удалён из-за строчки кода```keep_locally = true```
 
 ![image](https://github.com/user-attachments/assets/8b5ccd94-d30d-4765-989a-631a59ca09b1)
 
