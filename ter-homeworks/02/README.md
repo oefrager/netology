@@ -2,7 +2,7 @@
 
 1. Ознакомьтесь с [документацией к security-groups в Yandex Cloud](https://cloud.yandex.ru/docs/vpc/concepts/security-groups?from=int-console-help-center-or-nav). 
 Этот функционал понадобится к следующей лекции.
-
+ 
 ------
 ### Внимание!! Обязательно предоставляем на проверку получившийся код в виде ссылки на ваш github-репозиторий!
 ------
