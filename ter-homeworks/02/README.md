@@ -34,9 +34,11 @@
 
 ### Задание 3
 
-1. Создаемфайл [vms_platform.tf](vms_platform.tf).
-2. Правим [main.tf](main.tf.new)
-4. Примените изменения.
+1. Создаем файл [vms_platform.tf](vms_platform.tf).
+2. Правим [main.tf](main.tf.db)
+3. Примените изменения и получаем:
+
+![изображение](https://github.com/user-attachments/assets/b01dcb1c-1dd9-4b36-93fd-839dd7c04979)
 
 
 ### Задание 4
