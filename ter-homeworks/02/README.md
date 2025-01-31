@@ -35,7 +35,7 @@
 ### Задание 3
 
 1. Создаем файл [vms_platform.tf](vms_platform.tf).
-2. Правим [main.tf](main.tf.db)
+2. Правим [main.tf](main.tf.db).
 3. Примените изменения и получаем:
 
 ![изображение](https://github.com/user-attachments/assets/b01dcb1c-1dd9-4b36-93fd-839dd7c04979)
@@ -43,10 +43,9 @@
 
 ### Задание 4
 
-1. Объявите в файле outputs.tf **один** output , содержащий: instance_name, external_ip, fqdn для каждой из ВМ в удобном лично для вас формате.(без хардкода!!!)
-2. Примените изменения.
+1. Создаем файл [outputs.tf](outputs.tf) для вывода: instance_name, external_ip, fqdn из каждой ВМ
 
-В качестве решения приложите вывод значений ip-адресов команды ```terraform output```.
+![изображение](https://github.com/user-attachments/assets/74c53387-1427-43b7-b526-ace33ba04b35)
 
 
 ### Задание 5
