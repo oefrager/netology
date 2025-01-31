@@ -23,9 +23,13 @@
 
 ### Задание 2
 
-1. Замените все хардкод-**значения** для ресурсов **yandex_compute_image** и **yandex_compute_instance** на **отдельные** переменные. К названиям переменных ВМ добавьте в начало префикс **vm_web_** .  Пример: **vm_web_name**.
-2. Объявите нужные переменные в файле variables.tf, обязательно указывайте тип переменной. Заполните их **default** прежними значениями из main.tf. 
-3. Проверьте terraform plan. Изменений быть не должно. 
+1. Меняем все хардкод-**значения** для ресурсов **yandex_compute_image** и **yandex_compute_instance** на переменные.
+[main.tf](main.tf), [variables.tf](variables.tf)
+
+3. Проверяем ```terraform plan```.
+
+   ![изображение](https://github.com/user-attachments/assets/51c803df-791c-4731-8c72-6484d334009f)
+
 
 
 ### Задание 3
