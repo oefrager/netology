@@ -59,6 +59,7 @@
 ### Задание 6
 
 1. Объединяем переменную в ```vms_resources``` и  внутри неё конфиги обеих ВМ в виде вложенного map(object).
+
 variebles.tf:
 
    ![изображение](https://github.com/user-attachments/assets/b084aa3a-230d-4cfd-beb4-5593df3a02a8)
