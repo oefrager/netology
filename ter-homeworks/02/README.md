@@ -105,35 +105,30 @@ main.tf:
 ### Задание 8*
 1. Напишите и проверьте переменную test и полное описание ее type в соответствии со значением из terraform.tfvars:
 ```
-test = [
-  {
-    "dev1" = [
-      "ssh -o 'StrictHostKeyChecking=no' ubuntu@62.84.124.117",
-      "10.0.1.7",
-    ]
-  },
-  {
-    "dev2" = [
-      "ssh -o 'StrictHostKeyChecking=no' ubuntu@84.252.140.88",
-      "10.0.2.29",
-    ]
-  },
-  {
-    "prod1" = [
-      "ssh -o 'StrictHostKeyChecking=no' ubuntu@51.250.2.101",
-      "10.0.1.30",
-    ]
-  },
-]
+> type(var.test)
+tuple([
+    object({
+        dev1: tuple([
+            string,
+            string,
+        ]),
+    }),
+    object({
+        dev2: tuple([
+            string,
+            string,
+        ]),
+    }),
+    object({
+        prod1: tuple([
+            string,
+            string,
+        ]),
+    }),
+])
 ```
 2. Напишите выражение в terraform console, которое позволит вычленить строку "ssh -o 'StrictHostKeyChecking=no' ubuntu@62.84.124.117" из этой переменной.
-
-
-### Задание 9*
-
-Используя инструкцию https://cloud.yandex.ru/ru/docs/vpc/operations/create-nat-gateway#tf_1, настройте для ваших ВМ nat_gateway. Для проверки уберите внешний IP адрес (nat=false) у ваших ВМ и проверьте доступ в интернет с ВМ, подключившись к ней через serial console. Для подключения предварительно через ssh измените пароль пользователя: ```sudo passwd ubuntu```
-
-### Правила приёма работыДля подключения предварительно через ssh измените пароль пользователя: sudo passwd ubuntu
-В качестве результата прикрепите ссылку на MD файл с описанием выполненой работы в вашем репозитории. Так же в репозитории должен присутсвовать ваш финальный код проекта.
-
-**Важно. Удалите все созданные ресурсы**.
+ ```
+ > var.test.0.dev1.0
+ "ssh -o 'StrictHostKeyChecking=no' ubuntu@62.84.124.117"
+ ```
