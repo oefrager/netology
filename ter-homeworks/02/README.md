@@ -51,7 +51,6 @@
 ### Задание 5
 
 1. Создаем файл [locals.tf](locals.tf) с параметрами ВМ.
-2. Замените переменные внутри ресурса ВМ на созданные вами local-переменные.
 3. Применяем изменения и получаем:
 
 ![изображение](https://github.com/user-attachments/assets/1ca5b0f0-83b2-456f-a08b-e290f871bdbe)
@@ -59,41 +58,23 @@
 
 ### Задание 6
 
-1. Вместо использования трёх переменных  ".._cores",".._memory",".._core_fraction" в блоке  resources {...}, объедините их в единую map-переменную **vms_resources** и  внутри неё конфиги обеих ВМ в виде вложенного map(object).  
-   ```
-   пример из terraform.tfvars:
-   vms_resources = {
-     web={
-       cores=2
-       memory=2
-       core_fraction=5
-       hdd_size=10
-       hdd_type="network-hdd"
-       ...
-     },
-     db= {
-       cores=2
-       memory=4
-       core_fraction=20
-       hdd_size=10
-       hdd_type="network-ssd"
-       ...
-     }
-   }
-   ```
-3. Создайте и используйте отдельную map(object) переменную для блока metadata, она должна быть общая для всех ваших ВМ.
-   ```
-   пример из terraform.tfvars:
-   metadata = {
-     serial-port-enable = 1
-     ssh-keys           = "ubuntu:ssh-ed25519 AAAAC..."
-   }
-   ```  
+1. Объединяем переменную в ```vms_resources``` и  внутри неё конфиги обеих ВМ в виде вложенного map(object).
+variebles.tf:
+
+   ![изображение](https://github.com/user-attachments/assets/b084aa3a-230d-4cfd-beb4-5593df3a02a8)
+
+main.tf:
+
+   ![изображение](https://github.com/user-attachments/assets/738b2a8e-eaa3-492b-9d5e-d1c715d87cb6)
+
   
 5. Найдите и закоментируйте все, более не используемые переменные проекта.
-6. Проверьте terraform plan. Изменений быть не должно.
+6. Применяем изменения и получаем:
+
+![изображение](https://github.com/user-attachments/assets/59f1466f-dac6-4432-894b-c2d53f4667f4)
 
 ------
+
 ### Задание 7*
 
 Изучите содержимое файла console.tf. Откройте terraform console, выполните следующие задания: 
