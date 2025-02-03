@@ -23,9 +23,8 @@
 
 ### Задание 2
 
-1. Меняем все хардкод-**значения** для ресурсов **yandex_compute_image** и **yandex_compute_instance** на переменные.  [variables.tf](variables.tf)
-
-main.tf:
+1. Меняем все хардкод-**значения** для ресурсов **yandex_compute_image** и **yandex_compute_instance** на переменные в [variables.tf](variables.tf)
+Получаем main.tf:
 ```
 resource "yandex_vpc_network" "develop" {
   name      = var.vpc_name
