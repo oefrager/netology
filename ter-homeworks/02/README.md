@@ -23,8 +23,55 @@
 
 ### Задание 2
 
-1. Меняем все хардкод-**значения** для ресурсов **yandex_compute_image** и **yandex_compute_instance** на переменные.
-[main.tf](main.tf), [variables.tf](variables.tf)
+1. Меняем все хардкод-**значения** для ресурсов **yandex_compute_image** и **yandex_compute_instance** на переменные.  [variables.tf](variables.tf)
+
+main.tf:
+```
+resource "yandex_vpc_network" "develop" {
+  name      = var.vpc_name
+}
+resource "yandex_vpc_subnet" "develop" {
+  name           = var.vpc_name
+  zone           = var.default_zone
+  network_id     = yandex_vpc_network.develop.id
+  v4_cidr_blocks = var.default_cidr
+}
+
+#--------------
+data "yandex_compute_image" "ubuntu" {
+  family = var.vm_web_image
+}
+
+resource "yandex_compute_instance" "platform" {
+  name            = var.vm_web_instance["name"]
+  platform_id     = var.vm_web_instance["platform_id"]
+  resources {
+    cores         = var.vm_web_instance["cores"]
+    memory        = var.vm_web_instance["memory"]
+    core_fraction = var.vm_web_instance["core_fraction"]
+  }
+#--------------
+
+  boot_disk {
+    initialize_params {
+      image_id = data.yandex_compute_image.ubuntu.image_id
+    }
+  }
+  scheduling_policy {
+    preemptible = true
+  }
+  network_interface {
+    subnet_id = yandex_vpc_subnet.develop.id
+    nat       = true
+  }
+
+  metadata = {
+    serial-port-enable = 1
+    ssh-keys           = "${file(var.vms_ssh_root_key)}"
+  }
+
+}
+```
 
 3. Проверяем ```terraform plan```.
 
@@ -35,7 +82,7 @@
 ### Задание 3
 
 1. Создаем файл [vms_platform.tf](vms_platform.tf).
-2. Правим [main.tf](main.tf.db).
+2. Правим [main.tf](main.tf).
 3. Применяем изменения и получаем:
 
 ![изображение](https://github.com/user-attachments/assets/b01dcb1c-1dd9-4b36-93fd-839dd7c04979)
